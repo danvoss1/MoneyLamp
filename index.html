@@ -2,35 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="manifest" href="/manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Money Lamp</title>
+    <link rel="manifest" href="/manifest.json">
     <style>
-        body {
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             background-color: #f0f0f0;
-            margin: 0;
             font-family: 'Century Gothic', Arial, sans-serif;
         }
+
         #titleScreen, #lampScreen {
             display: none;
+            width: 100%;
+            height: 100%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
+
         #titleScreen {
             display: flex;
         }
+
         #titleScreen p {
-            margin: 5px 0; /* Reduces space between the two lines of text */
+            margin: 5px 0;
         }
+
         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             cursor: pointer;
         }
+
         button {
             margin-top: 20px;
             padding: 10px 20px;
@@ -51,7 +64,7 @@
 
     <!-- Lamp Toggle Screen -->
     <div id="lampScreen">
-        <img id="lamp" src="Lamp_Off.jpg" alt="Lamp" width="300">
+        <img id="lamp" src="Lamp_Off.jpg" alt="Lamp">
         <audio id="soundOn" src="lamp_on.mp3"></audio>
         <audio id="soundOff" src="lamp_off.mp3"></audio>
     </div>

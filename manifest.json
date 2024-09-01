@@ -1,7 +1,7 @@
 {
     "name": "The Money Lamp",
     "short_name": "Money Lamp",
-    "start_url": "/index.html",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#f0f0f0",
     "theme_color": "#000000",
@@ -15,7 +15,11 @@
         "src": "icon-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
+      },
+      {
+        "src": "icon-1024x1024.png",
+        "sizes": "1024x1024",
+        "type": "image/png"
       }
     ]
-  }
-  
+}
