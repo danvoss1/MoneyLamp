@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Money Lamp</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: 'Century Gothic', Arial, sans-serif;
+        }
+        #titleScreen, #lampScreen {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #titleScreen {
+            display: flex;
+        }
+        #titleScreen p {
+            margin: 5px 0; /* Reduces space between the two lines of text */
+        }
+        img {
+            cursor: pointer;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            font-family: 'Century Gothic', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Title Screen -->
+    <div id="titleScreen">
+        <h1>The Money Lamp</h1>
+        <p>Like a wise man once preached, turn on this lamp and money will be made.</p>
+        <p>Focus on yourself and get rid of digital distractions. The work start now.</p>
+        <button id="startButton">Let's make some money</button>
+    </div>
+
+    <!-- Lamp Toggle Screen -->
+    <div id="lampScreen">
+        <img id="lamp" src="Lamp_Off.jpg" alt="Lamp" width="300">
+        <audio id="soundOn" src="lamp_on.mp3"></audio>
+        <audio id="soundOff" src="lamp_off.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const startButton = document.getElementById('startButton');
+            const titleScreen = document.getElementById('titleScreen');
+            const lampScreen = document.getElementById('lampScreen');
+            const lamp = document.getElementById('lamp');
+            const soundOn = document.getElementById('soundOn');
+            const soundOff = document.getElementById('soundOff');
+            let isLampOn = false;
+
+            // Show lamp screen when the button is clicked
+            startButton.addEventListener('click', function() {
+                titleScreen.style.display = 'none';
+                lampScreen.style.display = 'flex';
+            });
+
+            // Toggle lamp and play sound
+            lamp.addEventListener('click', function() {
+                if (isLampOn) {
+                    lamp.src = 'Lamp_Off.jpg';
+                    soundOff.play();  // Play the lamp off sound
+                } else {
+                    lamp.src = 'Lamp_On.jpg';
+                    soundOn.play();  // Play the lamp on sound
+                }
+                isLampOn = !isLampOn;
+            });
+        });
+    </script>
+</body>
+</html>
